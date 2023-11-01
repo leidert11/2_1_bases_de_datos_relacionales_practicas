@@ -92,3 +92,29 @@ alter table orden add fecha_orden date not null;
 alter table orden add direccion_de_envio varchar(255) not null;
 alter table orden add informacion_de_pago varchar(255) not null;
 
+
+CREATE TABLE autores_libros (
+);
+
+alter table autores_libros add id_autores  int not null;
+alter table autores_libros add id_libro  int not null;
+
+
+CREATE TABLE editores_libros (
+);
+
+alter table editores_libros add id_libro  int not null;
+alter table editores_libros add id_editor  int not null;
+
+CREATE TABLE cliente_orden (
+);
+
+
+alter table cliente_orden add id_cliente  int not null;
+alter table cliente_orden add id_orden  int not null;
+
+CREATE TABLE carrito_orden (
+);
+
+alter table carrito_orden add id_orden  int not null;
+alter table carrito_orden add id_carrito  int not null;
