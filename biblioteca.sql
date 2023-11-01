@@ -118,3 +118,28 @@ CREATE TABLE carrito_orden (
 
 alter table carrito_orden add id_orden  int not null;
 alter table carrito_orden add id_carrito  int not null;
+
+
+ALTER TABLE libro_in_almacen ADD CONSTRAINT libro_in_almacen_fk0 FOREIGN KEY (id_libro) REFERENCES libros(isbn);
+
+ALTER TABLE libro_in_almacen ADD CONSTRAINT libro_in_almacen_fk1 FOREIGN KEY (id_almacen) REFERENCES almacenes(id);
+
+ALTER TABLE carrito_compras ADD CONSTRAINT carrito_compras_fk0 FOREIGN KEY (id_cliente) REFERENCES clientes(id);
+
+ALTER TABLE carrito_compras ADD CONSTRAINT carrito_compras_fk1 FOREIGN KEY (id_libro) REFERENCES libros(isbn);
+
+ALTER TABLE autores_libros ADD CONSTRAINT autores_libros_fk0 FOREIGN KEY (id_autores) REFERENCES autores(id);
+
+ALTER TABLE autores_libros ADD CONSTRAINT autores_libros_fk1 FOREIGN KEY (id_libro) REFERENCES libros(isbn);
+
+ALTER TABLE editores_libros ADD CONSTRAINT editores_libros_fk0 FOREIGN KEY (id_libro) REFERENCES libros(isbn);
+
+ALTER TABLE editores_libros ADD CONSTRAINT editores_libros_fk1 FOREIGN KEY (id_editor) REFERENCES editores(id);
+
+ALTER TABLE cliente_orden ADD CONSTRAINT cliente_orden_fk0 FOREIGN KEY (id_cliente) REFERENCES clientes(id);
+
+ALTER TABLE cliente_orden ADD CONSTRAINT cliente_orden_fk1 FOREIGN KEY (id_orden) REFERENCES orden(id);
+
+ALTER TABLE carrito_orden ADD CONSTRAINT carrito_orden_fk0 FOREIGN KEY (id_orden) REFERENCES orden(id);
+
+ALTER TABLE carrito_orden ADD CONSTRAINT carrito_orden_fk1 FOREIGN KEY (id_carrito) REFERENCES carrito_compras(id);
