@@ -1,5 +1,7 @@
 
--- libros
+CREATE DATABASE if NOT EXISTS pedidos;
+
+use pedidos;
 
 CREATE TABLE libros (
 isbn varchar(255) NOT NULL,
